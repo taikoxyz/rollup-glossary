@@ -2,7 +2,7 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
-  logo: <strong>The Rollup Glossary</strong>,
+  logo: <strong>Rollup Glossary</strong>,
   project: {
     link: "https://github.com/taikoxyz/rollup-glossary",
   },
@@ -19,10 +19,15 @@ const config: DocsThemeConfig = {
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="The Rollup Glossary" />
+      <meta property="og:title" content="Rollup Glossary" />
       <meta property="og:description" content="A glossary for rollups" />
     </>
   ),
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s – Rollup Glossary",
+    };
+  },
 };
 
 export default config;

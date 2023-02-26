@@ -2,13 +2,19 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
-  logo: <span>The Rollup Glossary</span>,
+  logo: <strong>The Rollup Glossary</strong>,
   project: {
-    link: "https://github.com/d1onys1us/rollup-glossary",
+    link: "https://github.com/taikoxyz/rollup-glossary",
   },
-  docsRepositoryBase: "https://github.com/d1onys1us/rollup-glossary",
+  docsRepositoryBase: "https://github.com/taikoxyz/rollup-glossary/edit/main/",
   footer: {
-    text: "The Rollup Glossary",
+    component: null,
+  },
+  feedback: {
+    content: null,
+  },
+  editLink: {
+    text: "Edit this page ↗",
   },
 };
 

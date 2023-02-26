@@ -1,18 +1,15 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from "react";
+import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>The Rollup Glossary</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: "https://github.com/d1onys1us/rollup-glossary",
   },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: "https://github.com/d1onys1us/rollup-glossary",
   footer: {
-    text: 'Nextra Docs Template',
+    text: "The Rollup Glossary",
   },
-}
+};
 
-export default config
+export default config;

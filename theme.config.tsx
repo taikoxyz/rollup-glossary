@@ -16,6 +16,13 @@ const config: DocsThemeConfig = {
   editLink: {
     text: "Edit this page ↗",
   },
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content="The Rollup Glossary" />
+      <meta property="og:description" content="A glossary for rollups" />
+    </>
+  ),
 };
 
 export default config;

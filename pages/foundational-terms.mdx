@@ -3,6 +3,10 @@
 
 A [ZK-Rollup](/rollup-glossary#zk-rollup) that can interpret and execute [EVM](/rollup-glossary#Ethereum-Virtual-Machine-(EVM)) [bytecode](/rollup-glossary#bytecode). All EVM opcodes and pre-compiles are supported and provable through the [ZK-EVM](/rollup-glossary#zk-evm) [circuit](/rollup-glossary#circuit), but gas costs for EVM opcodes are changed. (Type 2.5 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
+## Data availability
+
+The property of a rollup’s state being reachable by any node retrieving the inputs that were rolled up and executed to reach said state. Data availability (DA), specifically decoupling it from the rollup nodes themselves, is one of the preeminent factors which allows a rollup to scale securely. A rollup is faced with a decision of what to use as a DA layer to guarantee that any node can retrieve this data--permissionlessly under any circumstance. For this reason, using Ethereum for DA currently provides the strongest security guarantees. If data is stored somewhere other than a permissionless L1, then the L2 is not a rollup, but some other type of L2.
+
 ## Decentralized rollup
 
 There are several factors within a [rollup](/rollup-glossary#rollup) construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node, who can [propose](#proposer) blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts. For the factors of "who can run a node/proposer/prover", the question asks both: is it [permissionless](#permissionless) for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.

@@ -1,11 +1,11 @@
 
 ## Bytecode-equivalent ZK-EVM
 
-A ZK-Rollup that can interpret and execute EVM bytecode. All EVM opcodes and pre-compiles are supported and provable through the ZK-EVM circuit, but gas costs for EVM opcodes are changed. (Type 2.5 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/rollup-glossary#zk-rollup) that can interpret and execute [EVM](/rollup-glossary#Ethereum-Virtual-Machine-(EVM)) [bytecode](/rollup-glossary#bytecode). All EVM opcodes and pre-compiles are supported and provable through the [ZK-EVM](/rollup-glossary#zk-evm) [circuit](/rollup-glossary#circuit), but gas costs for EVM opcodes are changed. (Type 2.5 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## Decentralized rollup
 
-There are several factors within a rollup construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node, who can [propose](#proposer) blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts. For the factors of "who can run a node/proposer/prover", the question asks both: is it permissionless for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.
+There are several factors within a [rollup](/rollup-glossary#rollup) construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node, who can [propose](#proposer) blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts. For the factors of "who can run a node/proposer/prover", the question asks both: is it [permissionless](#permissionless) for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.
 
 ## Ethereum-equivalent ZK-EVM
 
@@ -21,7 +21,7 @@ A ZK-Rollup that can interpret and execute Ethereum bytecode, with some changes 
 
 ## Finality
 
-The guarantee that a set of transactions before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups, and at times within those categories as well.
+The guarantee that a set of [transactions](/rollup-glossary#transaction) before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups, and at times within those categories as well.
 
 ## Language-compatible ZK-EVM
 
@@ -29,7 +29,7 @@ A ZK-Rollup that can interpret and execute Solidity or other high-level-language
 
 ## Layer 2
 
-Layer 2 (L2) is a category of technical solutions which build upon an L1 with the aim of improving scalability, privacy, or other properties. L2s make use of L1 to bootstrap security and settlement guarantees. The L2 and L1 de-composition represents an example of a modular blockchain framework.
+Layer 2 (L2) is a category of technical solutions which build upon an [L1](/rollup-glossary#layer-1) with the aim of improving [scalability](#scalability), privacy, or other properties. L2s make use of L1 to bootstrap security and [settlement](/rollup-glossary#settlement) guarantees. The L2 and L1 de-composition represents an example of a modular blockchain framework.
 
 ## Permissionless
 
@@ -41,7 +41,7 @@ A type of layer 2 scaling solution that batches multiple transactions and submit
 
 ## Scalability
 
-The ability of a blockchain to handle a high level of throughput as measured in transactions per second (TPS), holding decentralization and hardware requirements constant.
+The ability of a blockchain to handle a high level of throughput as measured in transactions per second (TPS), holding [decentralization](#decentralized-rollup) and hardware requirements constant.
 
 ## Trustless
 

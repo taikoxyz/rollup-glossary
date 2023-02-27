@@ -1,31 +1,39 @@
 
-## Bytecode-equivalent ZK-EVM
+## Bytecode-equivalent and EVM-equivalent ZK-EVM
 
-Can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported, though some changes may be introduced to improve the efficiency to generate ZK proofs.
+A ZK-Rollup that can interpret and execute EVM bytecode. All EVM opcodes and pre-compiles are supported and provable through the ZK-EVM circuit. 
 
-## Decentralization
+## Decentralized rollup
 
-The concept of moving the control and execution of processes away from a central entity. In the context of rollups, there are several factors which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node (and how easily), who can [propose](#proposer) rollup blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts.
+There are several factors within a rollup construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node, who can [propose](#proposer) blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts. For the factors of "who can run a node/proposer/prover", the question asks both: is it permissionless for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.
 
 ## Ethereum-equivalent ZK-EVM
 
-Able to prove the correctness of an Ethereum block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. 
+A ZK-Rollup that can prove the correctness of an actual Ethereum L1 block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. 
 
-## EVM-equivalent ZK-EVM
+## Bytecode-compatible and EVM-compatible ZK-EVM
 
-A ZK-Rollup that can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported, no changes are made to the gas schedule, and Ethereum smart contracts can almost always run as is. 
+A ZK-Rollup that can interpret and execute Ethereum bytecode, with some changes made to certain components of the EVM, such as different gas costs, or some unsupported features.
 
 ## Finality
 
-The guarantee that a set of transactions before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups.
+The guarantee that a set of transactions before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups, and at times within those categories as well.
+
+## Language-compatible ZK-EVM
+
+A ZK-Rollup that can interpret and execute Solidity or other high-level-language source code. This code is compiled into bytecode that differs from that which the EVM runs.
 
 ## Layer 2
 
-Layer 2 (L2) is a category of technical solutions which build upon an L1 with the aim of improving scalability, privacy, or other properties. L2s make use of L1 to bootstrap security and settlement guarantees. The L2 and L1 composition represents an example of a modular blockchain framework.
+Layer 2 (L2) is a category of technical solutions which build upon an L1 with the aim of improving scalability, privacy, or other properties. L2s make use of L1 to bootstrap security and settlement guarantees. The L2 and L1 de-composition represents an example of a modular blockchain framework.
+
+## Permissionless
+
+Anyone willing should be able to join and leave the network at any time, without causing significant disturbance to the network or being detrimental to the party in question. No single entity should have the power to allowlist or blocklist participants.
 
 ## Rollup
 
-A type of layer 2 scaling solution that batches multiple transactions and submits them to the Ethereum main chain in a single transaction. This allows for reductions in gas costs and increases in transaction throughput. There are Optimistic and Zero-knowledge rollups that use different security methods to offer these scalability gains.
+A type of layer 2 scaling solution that batches multiple transactions and submits them to a separate chain (like an L1) in a single transaction. The validity of the batch and the transactions within is proven either up front with a validity proof (ZK-Rollup), or after some challenge period has elapsed without a fraud proof being submitted (Optimistic Rollup). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/DA layer to which they posted the transaction data.
 
 ## Scalability
 
@@ -33,7 +41,7 @@ The ability of a blockchain to handle a high level of throughput as measured in 
 
 ## Trustless
 
-TODO
+The ability of a network to mediate transactions without any of the involved parties needing to trust a third party. A further definition may be: given a starting set of trust assumptions or point of understanding, the inability for this understanding to be unilaterally changed by any one party.
 
 ## Type 1 to 4 ZK-EVMs
 

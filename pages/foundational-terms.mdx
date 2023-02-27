@@ -1,19 +1,19 @@
 
 ## Bytecode-equivalent ZK-EVM
 
-A ZK-Rollup that can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported.
+Can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported, though some changes may be introduced to improve the efficiency to generate ZK proofs.
 
 ## Decentralization
 
 The concept of moving the control and execution of processes away from a central entity. In the context of rollups, there are several factors which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node (and how easily), who can [propose](#proposer) rollup blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts.
 
-## Ethereum-equivalent
+## Ethereum-equivalent ZK-EVM
 
-Uncompromisingly Ethereum-equivalent. Able to prove the correctness of an Ethereum block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. 
+Able to prove the correctness of an Ethereum block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. 
 
 ## EVM-equivalent ZK-EVM
 
-A ZK-Rollup that can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported and Ethereum smart contracts can almost always run as is. 
+A ZK-Rollup that can interpret and execute Ethereum bytecode. All Ethereum opcodes are supported, no changes are made to the gas schedule, and Ethereum smart contracts can almost always run as is. 
 
 ## Finality
 
@@ -36,6 +36,8 @@ The ability of a blockchain to handle a high level of throughput as measured in 
 TODO
 
 ## Type 1 to 4 ZK-EVMs
+
+From [Vitalik's post](https://vitalik.ca/general/2022/08/04/zkevm.html).
 
 **Type 1 ZK-EVM (fully Ethereum-equivalent)**
 

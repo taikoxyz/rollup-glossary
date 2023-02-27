@@ -60,10 +60,6 @@ One of three properties of [zero-knowledge proofs](#zero-knowledge-proof), compl
 A sharding design proposed for Ethereum. Instead of providing more space for transactions, Ethereum sharding provides more space for [blobs](#blobs) of data. Verifying a blob simply requires checking that the blob is available - that it can be downloaded from the network. The data space in these blobs is expected to be used by layer-2 rollup protocols.
 In comparison to other sharding mechanisms, where there are a fixed number of shards with distinct blocks and distinct block proposers, in Danksharding there is only one proposer that chooses all transactions and all data that go into that slot.
 
-## Data availability
-
-The property of a rollup’s state being reachable by any node retrieving the inputs that were rolled up and executed to reach said state. Data availability (DA), specifically decoupling it from the rollup nodes themselves, is the preeminent notion which allows a rollup to scale securely. A rollup is faced with a decision of what to use as a DA layer (data storage) to guarantee that any node can retrieve this data, permissionlessly under any circumstance. For this reason, using Ethereum for DA currently provides the strongest security guarantees.
-
 ## Deterministic
 
 The concept of some function or process having a single outcome that is knowable by all participants. In the context of a rollup, it generally refers to the new state being calculable given a prior state and a list of transactions to be executed.

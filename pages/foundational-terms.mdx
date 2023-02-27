@@ -1,5 +1,5 @@
 
-## Bytecode-equivalent and EVM-equivalent ZK-EVM
+## Bytecode-equivalent (EVM-equivalent) ZK-EVM
 
 A ZK-Rollup that can interpret and execute EVM bytecode. All EVM opcodes and pre-compiles are supported and provable through the ZK-EVM circuit. 
 
@@ -11,7 +11,7 @@ There are several factors within a rollup construction which separately can be m
 
 A ZK-Rollup that can prove the correctness of an actual Ethereum L1 block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. 
 
-## Bytecode-compatible and EVM-compatible ZK-EVM
+## Bytecode-compatible (EVM-compatible) ZK-EVM
 
 A ZK-Rollup that can interpret and execute Ethereum bytecode, with some changes made to certain components of the EVM, such as different gas costs, or some unsupported features.
 
@@ -33,7 +33,7 @@ Anyone willing should be able to join and leave the network at any time, without
 
 ## Rollup
 
-A type of layer 2 scaling solution that batches multiple transactions and submits them to a separate chain (like an L1) in a single transaction. The validity of the batch and the transactions within is proven either up front with a validity proof (ZK-Rollup), or after some challenge period has elapsed without a fraud proof being submitted (Optimistic Rollup). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/DA layer to which they posted the transaction data.
+A type of layer 2 scaling solution that batches multiple transactions and submits them to a separate chain (like an L1) in a single transaction. The validity of the batch is proven either up front with a validity proof (ZK-Rollup), or after some challenge period has elapsed without a fraud proof being submitted (Optimistic Rollup). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/DA chain to which they posted the transaction data.
 
 ## Scalability
 
@@ -49,23 +49,23 @@ From [Vitalik's post](https://vitalik.ca/general/2022/08/04/zkevm.html).
 
 **Type 1 ZK-EVM (fully Ethereum-equivalent)**
 
-Fully and uncompromisingly Ethereum-equivalent. No part of the Ethereum system is changed to make it easier to generate proofs. They do not replace hashes, state trees, transaction trees, precompiles, or any other in-consensus logic, no matter how peripheral.
+Fully and uncompromisingly Ethereum-equivalent. No part of the Ethereum system is changed to make it easier to generate proofs. They do not replace hashes, state trees, transaction trees, precompiles, or any other in-consensus logic, no matter how peripheral. [Ethereum-equivalent ZK-EVM](#Ethereum-equivalent-ZK-EVM).
 
 **Type 2 ZK-EVM (fully EVM-equivalent)**
 
-Exactly EVM-equivalent, but not quite Ethereum-equivalent. There are some differences to Ethereum outside the EVM, particularly in data structures like the block structure and state tree to make proof generation faster.
+Exactly EVM-equivalent, but not quite Ethereum-equivalent. There are some differences to Ethereum outside the EVM, particularly in data structures like the block structure and state tree to make proof generation faster. [Bytecode-equivalent (EVM-equivalent) ZK-EVM](#Bytecode-equivalent-(EVM-equivalent)-ZK-EVM).
 
 **Type 2.5 ZK-EVM (EVM-equivalent, except for gas costs)**
 
-Increasing the gas costs of specific operations in the EVM that are very difficult to ZK-prove such as precompiles, the KECCAK opcode, etc. This would significantly improve worst-case prover times. Changing gas costs may reduce developer tooling compatibility and break a few applications.
+Increasing the gas costs of specific operations in the EVM that are very difficult to ZK-prove such as precompiles, the KECCAK opcode, etc. This would significantly improve worst-case prover times. Changing gas costs may reduce developer tooling compatibility and break a few applications. [Bytecode-compatible (EVM-compatible) ZK-EVM](#Bytecode-compatible-(EVM-compatible)-ZK-EVM).
 
 **Type 3 ZK-EVM (almost EVM-equivalent)**
 
-Removing a few features that are exceptionally hard to implement in a ZK-EVM implementation (precompiles are often at the top of the list) to further improve prover time and make the EVM easier to develop. They also often have minor differences in how they treat contract code, memory, or stack. Type 3 ZK-EVM is compatible with most applications, and requires some re-writing for the rest.
+Removing a few features that are exceptionally hard to implement in a ZK-EVM implementation (precompiles are often at the top of the list) to further improve prover time and make the EVM easier to develop. They also often have minor differences in how they treat contract code, memory, or stack. Type 3 ZK-EVM is compatible with most applications, and requires some re-writing for the rest. [Bytecode-compatible (EVM-compatible) ZK-EVM](#Bytecode-compatible-(EVM-compatible)-ZK-EVM).
 
 **Type 4 ZK-EVM (high-level-language equivalent)**
 
-Taking smart contract source code written in a high-level language (Solidity, Vyper, etc.) and compiling to some language that is explicitly designed to be ZK-friendly. It allows us to avoid ZK-proving all the different parts of each EVM execution step. Some applications written in Solidity or Vyper and then compiled down might not work because contracts may not have the same addresses, handwritten EVM bytecode is more difficult to use, and lots of debugging infrastructure cannot be carried over.
+Taking smart contract source code written in a high-level language (Solidity, Vyper, etc.) and compiling to some language that is explicitly designed to be ZK-friendly. It allows us to avoid ZK-proving all the different parts of each EVM execution step. Some applications written in Solidity or Vyper and then compiled down might not work because contracts may not have the same addresses, handwritten EVM bytecode is more difficult to use, and lots of debugging infrastructure cannot be carried over. [Language-compatible ZK-EVM](#Language-compatible-ZK-EVM).
 
 ## Upgradeability
 

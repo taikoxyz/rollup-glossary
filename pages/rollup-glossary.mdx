@@ -64,10 +64,6 @@ In comparison to other sharding mechanisms, where there are a fixed number of sh
 
 The property of a rollup’s state being reachable by any node retrieving the inputs that were rolled up and executed to reach said state. Data availability (DA), specifically decoupling it from the rollup nodes themselves, is the preeminent notion which allows a rollup to scale securely. A rollup is faced with a decision of what to use as a DA layer (data storage) to guarantee that any node can retrieve this data, permissionlessly under any circumstance. For this reason, using Ethereum for DA currently provides the strongest security guarantees.
 
-## Decentralization
-
-The concept of moving the control and execution of processes away from a central entity. In the context of rollups, there are several factors which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node (and how easily), who can [propose](#proposer) rollup blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts.
-
 ## Deterministic
 
 The concept of some function or process having a single outcome that is knowable by all participants. In the context of a rollup, it generally refers to the new state being calculable given a prior state and a list of transactions to be executed.
@@ -87,10 +83,6 @@ A perfect degree of [compatibility](#compatibility); where one system or concept
 ## Escape hatch
 
 The facility for any user of a rollup to exit the system with their assets under any circumstance. Most relevant in rollups with a centralized [proposer](#proposer), wherein users do not have the ability to propose blocks, but can nonetheless exit the rollup by interacting with a smart contract on L1.
-
-## Finality
-
-The guarantee that a set of transactions before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups.
 
 ## Fast Fourier transform (FFT)
 
@@ -149,10 +141,6 @@ A formula that helps to find a polynomial which takes on certain values at arbit
 
 Layer 1 (L1) is a blockchain that is self-reliant on its validator set for its security and consensus properties. Ethereum is an example of a layer 1. Blockchains started receiving the moniker of layer 1 once layer 2 became a meaningful area of development.
 
-## Layer 2
-
-Layer 2 (L2) is a category of technical solutions which build upon an L1 with the aim of improving scalability, privacy, or other properties. L2s make use of L1 to bootstrap security and settlement guarantees. The L2 and L1 composition represents an example of a modular blockchain framework.
-
 ## Lookup table
 
 Lookup tables express a relation between variables in the format of a table. A prover can rely on such a table of precomputed values in generating a proof without having to do bit by bit arithmetic. These tables can help handle hash functions within circuits in a more friendly manner (that is speeding up decryption and reducing memory requirements).
@@ -191,7 +179,7 @@ An operator is the entity charged with managing a rollup and progressing its sta
 
 ## Optimistic rollup
 
-A rollup using fraud proofs to offer increased Layer 2 throughput while using the security provided by Layer 1. Optimistic rollups can handle any type of transaction possible in the EVM. Compared to ZK-Rollups, they have larger latency as there is a time window (challenging period) during which anyone can challenge the results of a rollup transaction by computing a fraud proof.
+A rollup that optimistically updates state with the possibility of fraud proofs being generated to revert faulty state transitions. Optimistic rollups have primarily been EVM-compatible to date. Compared to ZK-Rollups, they have longer time to finality as there is a time window (challenge period) during which anyone can challenge the results of a rollup transaction by computing a fraud proof.
 
 ## PLONK
 
@@ -223,10 +211,6 @@ If used in the context of an optimistic rollup, the prover generates the fraud p
 
 In the context of a rollup, an amount of some token allotted as a reward to the participant—proposer and/or prover—who performed a service for the network.
 
-## Rollup
-
-A type of layer 2 scaling solution that batches multiple transactions and submits them to the Ethereum main chain in a single transaction. This allows for reductions in gas costs and increases in transaction throughput. There are Optimistic and Zero-knowledge rollups that use different security methods to offer these scalability gains.
-
 ## Rollup-as-a-service
 
 An SDK or service that allows anyone to launch rollups quickly. Emphasis may be placed on the ability to customize the modular components of a rollup: VM, DA layer, proof system.
@@ -238,10 +222,6 @@ A bundle of smart contracts running on Ethereum that controls a rollup protocol.
 ## RPC (Remote Procedure Call)
 
 A protocol that a program uses to request a service from a program located on another computer in a network without having to understand the network details.
-
-## Scalability
-
-The ability of a blockchain to handle a high level of throughput as measured in transactions per second (TPS), holding decentralization and hardware requirements constant.
 
 ## Sequencer
 
@@ -288,39 +268,13 @@ The ability of a network to mediate transactions without any of the involved par
 
 A system of data-manipulation rules (such as a computer's instruction set, a programming language, or a cellular automaton) is said to be "Turing complete" or "computationally universal" if it is able to recognize or decide other data-manipulation rule sets.
 
-## Type 1 to 4 ZK-EVMs
-
-**Type 1 ZK-EVM (fully Ethereum-equivalent)**
-
-Fully and uncompromisingly Ethereum-equivalent. No part of the Ethereum system is changed to make it easier to generate proofs. They do not replace hashes, state trees, transaction trees, precompiles, or any other in-consensus logic, no matter how peripheral.
-
-**Type 2 ZK-EVM (fully EVM-equivalent)**
-
-Exactly EVM-equivalent, but not quite Ethereum-equivalent. There are some differences to Ethereum outside the EVM, particularly in data structures like the block structure and state tree to make proof generation faster.
-
-**Type 2.5 ZK-EVM (EVM-equivalent, except for gas costs)**
-
-Increasing the gas costs of specific operations in the EVM that are very difficult to ZK-prove such as precompiles, the KECCAK opcode, etc. This would significantly improve worst-case prover times. Changing gas costs may reduce developer tooling compatibility and break a few applications.
-
-**Type 3 ZK-EVM (almost EVM-equivalent)**
-
-Removing a few features that are exceptionally hard to implement in a ZK-EVM implementation (precompiles are often at the top of the list) to further improve prover time and make the EVM easier to develop. They also often have minor differences in how they treat contract code, memory, or stack. Type 3 ZK-EVM is compatible with most applications, and requires some re-writing for the rest.
-
-**Type 4 ZK-EVM (high-level-language equivalent)**
-
-Taking smart contract source code written in a high-level language (Solidity, Vyper, etc.) and compiling to some language that is explicitly designed to be ZK-friendly. It allows us to avoid ZK-proving all the different parts of each EVM execution step. Some applications written in Solidity or Vyper and then compiled down might not work because contracts may not have the same addresses, handwritten EVM bytecode is more difficult to use, and lots of debugging infrastructure cannot be carried over.
-
-## Upgradeability
-
-The ability for smart contracts and parameters used in a rollup to be updated by holders of an admin key. Upgradeability represents a vector of risk for users, and should be decentralized and combined with time delays for greater security guarantees.
-
 ## Validator
 
-A node in a proof-of-stake system responsible for storing data, processing transactions, and adding new blocks to the blockchain. To activate validator software, you need to be able to stake 32 ETH.
+A node in a blockchain system responsible for processing transactions, and adding or verifying new blocks to the blockchain. 
 
 ## Validity proof
 
-A security model for certain layer 2 solutions (mostly ZK-Rollups) where, to increase speed, transactions are ”rolled up” into batches and submitted to Ethereum in a single transaction. The transaction computation is done off-chain and then supplied to the main chain with a proof of their validity. This method increases the amount of transactions possible while maintaining security.
+The output of a cryptographic proving system attesting to correct computation. ZK-Rollups use succinct validity proofs (also called zero-knowledge proofs) to prove a batch of rollup transactions and blocks were properly executed. Validity proofs are submitted to a verifier, such as an Ethereum smart contract, which accepts them if properly constructed.
 
 ## Validium
 

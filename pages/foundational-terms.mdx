@@ -2,10 +2,18 @@
 ## Bytecode equivalent
 
 TODO
+Generally, an instruction set designed for efficient execution by a software interpreter or a virtual machine. Unlike human-readable source code, bytecode is expressed numerically. Within the context of rollups, often related to the concept of [compatibility](#compatibility): whether the bytecode of programs on the rollup are capable of being run as-is on Ethereum as well, and vice versa.
+
+## Decentralization
+
+The concept of moving the control and execution of processes away from a central entity. In the context of rollups, there are several factors which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node (and how easily), who can [propose](#proposer) rollup blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts.
 
 ## Ethereum-equivalent
 
 TODO
+## Equivalence
+
+A perfect degree of [compatibility](#compatibility); where one system or concept is indistinguishable from another in the domain being compared. In the context of rollups, it generally refers to the proximity to the [EVM](#Ethereum-Virtual-Machine-(EVM)) and to Ethereum architecture.
 
 ## EVM-equivalent
 
@@ -13,28 +21,46 @@ TODO
 
 ## Finality
 
-TODO
+The guarantee that a set of transactions before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups.
+
+## Layer 2
+
+Layer 2 (L2) is a category of technical solutions which build upon an L1 with the aim of improving scalability, privacy, or other properties. L2s make use of L1 to bootstrap security and settlement guarantees. The L2 and L1 composition represents an example of a modular blockchain framework.
+
+## Rollup
+
+A type of layer 2 scaling solution that batches multiple transactions and submits them to the Ethereum main chain in a single transaction. This allows for reductions in gas costs and increases in transaction throughput. There are Optimistic and Zero-knowledge rollups that use different security methods to offer these scalability gains.
+
+## Scalability
+
+The ability of a blockchain to handle a high level of throughput as measured in transactions per second (TPS), holding decentralization and hardware requirements constant.
 
 ## Trustless
 
 TODO
 
-## Type 1 ZK-EVM
+## Type 1 to 4 ZK-EVMs
 
-TODO
+**Type 1 ZK-EVM (fully Ethereum-equivalent)**
 
-## Type 2 ZK-EVM
+Fully and uncompromisingly Ethereum-equivalent. No part of the Ethereum system is changed to make it easier to generate proofs. They do not replace hashes, state trees, transaction trees, precompiles, or any other in-consensus logic, no matter how peripheral.
 
-TODO
+**Type 2 ZK-EVM (fully EVM-equivalent)**
 
-## Type 2.5 ZK-EVM
+Exactly EVM-equivalent, but not quite Ethereum-equivalent. There are some differences to Ethereum outside the EVM, particularly in data structures like the block structure and state tree to make proof generation faster.
 
-TODO
+**Type 2.5 ZK-EVM (EVM-equivalent, except for gas costs)**
 
-## Type 3 ZK-EVM
+Increasing the gas costs of specific operations in the EVM that are very difficult to ZK-prove such as precompiles, the KECCAK opcode, etc. This would significantly improve worst-case prover times. Changing gas costs may reduce developer tooling compatibility and break a few applications.
 
-TODO
+**Type 3 ZK-EVM (almost EVM-equivalent)**
 
-## Type 4 ZK-EVM
+Removing a few features that are exceptionally hard to implement in a ZK-EVM implementation (precompiles are often at the top of the list) to further improve prover time and make the EVM easier to develop. They also often have minor differences in how they treat contract code, memory, or stack. Type 3 ZK-EVM is compatible with most applications, and requires some re-writing for the rest.
 
-TODO
+**Type 4 ZK-EVM (high-level-language equivalent)**
+
+Taking smart contract source code written in a high-level language (Solidity, Vyper, etc.) and compiling to some language that is explicitly designed to be ZK-friendly. It allows us to avoid ZK-proving all the different parts of each EVM execution step. Some applications written in Solidity or Vyper and then compiled down might not work because contracts may not have the same addresses, handwritten EVM bytecode is more difficult to use, and lots of debugging infrastructure cannot be carried over.
+
+## Upgradeability
+
+The ability for smart contracts and parameters used in a rollup to be updated by holders of an admin key. Upgradeability represents a vector of risk for users, and should be decentralized and combined with time delays for greater security guarantees.

@@ -196,36 +196,36 @@ An entity that creates a [block](#Block) of [transactions](#Transaction), and pr
 
 ## Proto-danksharding (EIP-4844)
 
-A proposal to implement most of the logic and architecture that make up a full Danksharding spec (eg. transaction formats, verification rules), but not yet actually implementing any sharding. In a proto-danksharding implementation, all validators and users still have to directly validate the availability of the full data.
+A proposal to implement most of the logic and architecture that make up a full [Danksharding](#Danksharding) spec (eg. [transaction](#Transaction) formats, [verification](#Verify) rules), but not yet actually implementing any sharding. In a proto-danksharding implementation, all [validators](#Validator) and users still have to directly validate the availability of the full data.
 
 ## Prover
 
-An entity that generates the cryptographic proof to convince the verifier that the statement is true (without revealing its inputs). In a ZK-Rollup, the prover generates the ZK (validity) proof to submit to the verifier contract.
-If used in the context of an optimistic rollup, the prover generates the fraud proof to show that an incorrect state was submitted.
+An entity that generates the cryptographic proof to convince the [verifier](#Verifier) that the statement is true (without revealing its inputs). In a [ZK-Rollup](#ZK-Rollup), the prover generates the [ZK (validity) proof](#Validity-proof) to submit to the verifier contract.
+If used in the context of an [optimistic rollup](#Optimistic-rollup), the prover generates the [fraud proof](#Fraud-proof) to show that an incorrect state was submitted.
 
 ## Rewards
 
-In the context of a rollup, an amount of some token allotted as a reward to the participant—proposer and/or prover—who performed a service for the network.
+In the context of a [rollup](/foundational-terms#rollup), an amount of some token allotted as a reward to the participant—[proposer](#Proposer) and/or [prover](#Prover)—who performed a service for the [network](#network).
 
 ## Rollup-as-a-service
 
-An SDK or service that allows anyone to launch rollups quickly. Emphasis may be placed on the ability to customize the modular components of a rollup: VM, DA layer, proof system.
+An SDK or service that allows anyone to launch [rollups](/foundational-terms#rollup) quickly. Emphasis may be placed on the ability to customize the [modular](#Modular-blockchain) components of a rollup: VM, [DA](/foundational-terms#Data-availability) layer, proof system.
 
 ## Rollup contracts
 
-A bundle of smart contracts running on Ethereum that controls a rollup protocol. It includes the main contract which stores rollup blocks, tracks deposits, and monitors state updates, and the verifier contract which verifies zero-knowledge proofs submitted by provers.
+A bundle of [smart contracts](#Smart-contract) running on Ethereum that controls a [rollup](/foundational-terms#rollup) protocol. It includes the main contract which stores rollup [blocks](#block), tracks deposits, and monitors state updates, and the [verifier](#verifier) contract which verifies [zero-knowledge proofs](#Zero-knowledge-proof-(ZKP)) submitted by [provers](#Prover).
 
 ## RPC (Remote Procedure Call)
 
-A protocol that a program uses to request a service from a program located on another computer in a network without having to understand the network details.
+A protocol that a program uses to request a service from a program located on another computer in a [network](#network) without having to understand the network details.
 
 ## Sequencer
 
-A party responsible for ordering and executing transactions on the rollup. The sequencer verifies transactions, compresses the data into a block, and submits the batch to Ethereum L1 as a single transaction. Often synonymous with [proposer](#proposer).
+A party responsible for ordering and executing [transactions](#Transaction) on the [rollup](/foundational-terms#Rollup). The sequencer [verifies](#Verifier) transactions, compresses the data into a [block](#block), and submits the batch to Ethereum [L1](#Layer-1) as a single transaction. Often synonymous with [proposer](#proposer).
 
 ## Settlement
 
-The mechanism with which the execution of rollup blocks and the resultant state is verified and possible disputes are resolved. In the context of rollups or other modular blockchains, it often refers to the proof system used--validity (ZK) or fraud proofs, or a combination thereof. Sometimes it will refer to this mechanism along with where the mechanism's outputs are ultimately published and verified, as in Ethereum being a settlement layer by verifying the proof(s).
+The mechanism with which the execution of [rollup](/foundational-terms#Rollup) [blocks](#Block) and the resultant state is [verified](#Verifier) and possible disputes are resolved. In the context of rollups or other [modular blockchains](#Modular-blockchains), it often refers to the proof system used--[validity (ZK)](#Validity-Proof) or [fraud proofs](#Fraud-proof), or a combination thereof. Sometimes it will refer to this mechanism along with where the mechanism's outputs are ultimately published and verified, as in Ethereum being a settlement layer by verifying the proof(s).
 
 ## Smart contract
 
@@ -233,32 +233,32 @@ A program that executes on the Ethereum computing infrastructure, or other block
 
 ## SNARK
 
-Short for "succinct non-interactive argument of knowledge", a SNARK is a widely used type of zero-knowledge proof that is short and fast to verify. Different kinds of SNARKs are usually systematized by proof size, verification time, and type of setup. The most famous SNARKs are Groth16, PLONK/Marlin, Bulletproofs, and STARKs.
+Short for "[succinct](#Succinctness) non-interactive argument of knowledge", a SNARK is a widely used type of [zero-knowledge proof](#Zero-knowledge-proof-(ZKP)) that is short and fast to [verify](#Verifier). Different kinds of SNARKs are usually systematized by proof size, verification time, and type of [setup](#Trusted-setup). The most famous SNARKs are Groth16, [PLONK](#PLONK)/Marlin, Bulletproofs, and [STARKs](#STARK).
 
 ## STARK
 
-Short for "scalable transparent argument of knowledge", a STARK is a type of zero-knowledge proof that resolves one of the primary weaknesses of ZK-SNARKs, its reliance on a "trusted setup”. STARKs also come with much simpler cryptographic assumptions, avoiding the need for elliptic curves, pairings, and the knowledge-of-exponent assumption and instead relying purely on hashes and information theory. This means that they are secure even against attackers with quantum computers.
+Short for "[scalable](/foundational-terms#Scalability) transparent argument of knowledge", a STARK is a type of [zero-knowledge proof](#Zero-knowledge-proof-(ZKP)) that resolves one of the primary weaknesses of ZK-[SNARKs](#SNARK), its reliance on a "[trusted setup](#Trusted-setup)”. STARKs also come with much simpler cryptographic assumptions, avoiding the need for elliptic curves, pairings, and the knowledge-of-exponent assumption and instead relying purely on [hashes](#Hash) and information theory. This means that they are secure even against attackers with quantum computers.
 
 ## Succinctness
 
-A property of ZKP that stands for the following terms: (i) the proof of statement is shorter than the statement itself, (ii) the time to verify the proof is faster than just to evaluate the function from scratch.
+A property of [ZKP](#Zero-knowledge-proof-(ZKP)) that stands for the following terms: (i) the proof of statement is shorter than the statement itself, (ii) the time to [verify](#Verifier) the proof is faster than just to evaluate the function from scratch.
 
 ## Time Delay
 
-In regards to upgradeability, a predefined amount of time that must elapse before the rollup smart contracts or parameters are updated. This protects users from malicious upgrades by giving them time to exit the rollup before upgrades come into effect.
+In regards to [upgradeability](/foundational-terms#Upgradeability), a predefined amount of time that must elapse before the [rollup](/foundational-terms#Rollup) [smart contracts](#Smart-contract) or parameters are updated. This protects users from malicious upgrades by giving them time to exit the rollup before upgrades come into effect.
 
 ## Transaction
 
-Data committed to the Ethereum Blockchain signed by an originating account, targeting a specific address. The transaction contains metadata such as the gas limit for that transaction.
+Data committed to the Ethereum Blockchain signed by an originating account, targeting a specific address. The transaction contains metadata such as the [gas limit](#Gas-limit) for that [transaction](#Transaction).
 
 ## Trusted setup (ceremony)
 
 Generation of a piece of data that must then be used for some cryptographic protocol to run. Generating this data requires some secret information. The "trust" comes from the fact that a person generates a secret, uses it to generate the data, and then publishes the data and forgets the secret. Once the data is generated, and the secrets are forgotten, no further participation from the creators of the ceremony is required.
-There are two types of trusted setup: (i) trusted setup per circuit where it is generated from scratch for each circuit, (ii) trusted universal (updatable) setup where it can be used for as many circuits as we want.
+There are two types of trusted setup: (i) trusted setup per [circuit](#Circuit) where it is generated from scratch for each circuit, (ii) trusted universal (updatable) setup where it can be used for as many circuits as we want.
 
 ## Trustlessness
 
-The ability of a network to mediate transactions without any of the involved parties needing to trust a third party.
+The ability of a [network](#Network) to mediate [transactions](#Transaction) without any of the involved parties needing to trust a third party.
 
 ## Turing complete
 
@@ -266,36 +266,36 @@ A system of data-manipulation rules (such as a computer's instruction set, a pro
 
 ## Validator
 
-A node in a blockchain system responsible for processing transactions, and adding or verifying new blocks to the blockchain. 
+A [node](#node) in a blockchain system responsible for processing transactions, and adding or [verifying](#Verifier) new [blocks](#Block) to the blockchain. 
 
 ## Validity proof
 
-The output of a cryptographic proving system attesting to correct computation. ZK-Rollups use succinct validity proofs (also called zero-knowledge proofs) to prove a batch of rollup transactions and blocks were properly executed. Validity proofs are submitted to a verifier, such as an Ethereum smart contract, which accepts them if properly constructed.
+The output of a cryptographic proving system attesting to correct computation. [ZK-Rollups](#ZK-Rollup) use [succinct](#Succinctness) validity proofs (also called [zero-knowledge proofs](#Zero-knowledge-proof-(ZKP))) to [prove](#Prover) a batch of [rollup](/foundational-terms#rollup) [transactions](#Transaction) and [blocks](#Block) were properly executed. Validity proofs are submitted to a [verifier](#Verifier), such as an Ethereum [smart contract](#Smart-contract), which accepts them if properly constructed.
 
 ## Validium
 
-An off-chain solution that uses validity proofs to improve transaction throughput. Unlike Zero-knowledge rollups, validium data isn't stored on layer 1 Mainnet.
+An off-chain solution that uses [validity proofs](#Validity-proofs) to improve [transaction](#Transaction) throughput. Unlike [Zero-knowledge rollups](#ZK-Rollup), validium data isn't stored on [layer 1](#Layer-1) Mainnet.
 
 ## Verifier
 
-An entity in a ZK-Rollup, often a smart contract, that verifies zero-knowledge proofs submitted by a prover.
+An entity in a [ZK-Rollup](#ZK-Rollup), often a [smart contract](#Smart-contract), that verifies [zero-knowledge proofs](#Zero-knowledge-proof-(ZKP)) submitted by a [prover](#Prover).
 
 ## Verkle tree
 
-A data storage format of which you can make a proof that it contains some pieces of data to anyone who has the root of the tree. While similar to Merkle Patricia Trees, key differences include a much wider tree format which leads to smaller proof sizes.
+A data storage format of which you can make a proof that it contains some pieces of data to anyone who has the root of the tree. While similar to [Merkle Patricia Trees](#Merkle-tree), key differences include a much wider tree format which leads to smaller proof sizes.
 
 ## Volition
 
-A hybrid data availability mode, where the user can choose whether to place data on-chain or off-chain.
+A hybrid [data availability](/foundational-terms#Data-Availability) mode, where the user can choose whether to place data on-chain or off-chain.
 
 ## Zero-knowledge
 
-A cryptographic technology and sub-discipline of cryptography that allows an individual to prove that a statement or computation is true without revealing any additional information.
+A cryptographic technology and sub-discipline of cryptography that allows an individual to [prove](#Prover) that a statement or computation is true without revealing any additional information.
 
 ## Zero-knowledge proof (ZKP)
 
-A zero-knowledge proof is the resulting output of a zero-knowledge cryptographic method.
+A zero-knowledge proof is the resulting output of a [zero-knowledge](#Zero-knowledge) cryptographic method.
 
 ## ZK-Rollup
 
-A rollup that uses ZKPs (also often called validity proofs) to validate the correctness of the state transition function and update the rollup state. This is one of two main types of rollup constructions, along with optimistic rollups. In general, ZK-Rollups do not provide privacy preserving properties; privacy preserving ZK-Rollups are sometimes called ZK-ZK-Rollups.
+A [rollup](/foundational-terms#rollup) that uses [ZKPs](#Zero-knowledge-proof-(ZKP)) (also often called [validity proofs](#Validity-proof) to [validate](#Validator) the correctness of the state transition function and update the rollup state. This is one of two main types of rollup constructions, along with [optimistic rollups](#Optimistic-rollup). In general, ZK-Rollups do not provide privacy preserving properties; privacy preserving ZK-Rollups are sometimes called ZK-ZK-Rollups.

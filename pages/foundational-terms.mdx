@@ -1,7 +1,7 @@
 
 ## Bytecode-equivalent ZK-EVM
 
-A [ZK-Rollup](/rollup-glossary#zk-rollup) that can interpret and execute [EVM](/rollup-glossary#Ethereum-Virtual-Machine-(EVM)) [bytecode](/rollup-glossary#bytecode). All EVM opcodes and pre-compiles are supported and provable through the [ZK-EVM](/rollup-glossary#zk-evm) [circuit](/rollup-glossary#circuit), but gas costs for EVM opcodes are changed. (Type 2.5 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/rollup-glossary#zk-rollup) that can interpret and execute [EVM](/rollup-glossary#Ethereum-Virtual-Machine-(EVM)) [bytecode](/rollup-glossary#bytecode). All EVM opcodes and pre-compiles are supported and provable through the [ZK-EVM](/rollup-glossary#zk-evm) [circuit](/rollup-glossary#circuit), but gas costs for EVM opcodes might be changed. (Type 2.5 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## Data availability
 
@@ -13,7 +13,7 @@ There are several factors within a [rollup](/rollup-glossary#rollup) constructio
 
 ## Ethereum-equivalent ZK-EVM
 
-A ZK-Rollup that can prove the correctness of an actual Ethereum L1 block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM and beyond. (Type 1 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A ZK-Rollup that can prove the correctness of an actual Ethereum L1 block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM but also peripheral things like storage structures and hash functions. (Type 1 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## EVM-equivalent ZK-EVM
 
@@ -25,7 +25,9 @@ A ZK-Rollup that can interpret and execute Ethereum bytecode, with some changes 
 
 ## Finality
 
-The guarantee that a set of [transactions](/rollup-glossary#transaction) before a given time will not change and can't be reverted. When finality is reached differs meaningfully between ZK (validity) and optimistic rollups, and at times within those categories as well.
+> Needs help: some people distinguish order vs execution finality.
+
+Finality is a scale--when a valid L2 transaction is included in an L1 block, it has the same finality as that enclosing block. This is different from correctness, because incorrect state transitions can still have a concept of finality in an enclosing L1 block but be later proven as invalid.
 
 ## Language-compatible ZK-EVM
 
@@ -54,3 +56,9 @@ The ability of a network to mediate transactions without any of the involved par
 ## Upgradeability
 
 The ability for [rollup smart contracts](/rollup-glossary#rollup-contracts) and parameters used in a rollup to be updated by holders of an admin key. Upgradeability represents a vector of risk for users, and should be decentralized and combined with [time delays](/rollup-glossary#time-delay) for greater security guarantees.
+
+## ZK-EVM
+
+A ZK-EVM is understood as either:
+- A set of circuits that prove the execution of the Ethereum Virtual Machine (EVM). It is the core component of a ZK-Rollup that generates validity proofs to verify the correctness of programs.
+- The ZK-Rollup as a whole which offers EVM-compatible execution, and proves that execution with circuits that generate validity proofs.

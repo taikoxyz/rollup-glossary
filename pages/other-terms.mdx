@@ -60,7 +60,7 @@ One of three properties of [zero-knowledge proofs](#zero-knowledge-proof), compl
 A sharding design proposed for Ethereum. Instead of providing more space for transactions, Ethereum sharding provides more space for [blobs](#blobs) of data. Verifying a blob simply requires checking that the blob is available - that it can be downloaded from the network. The data space in these blobs is expected to be used by layer-2 rollup protocols.
 In comparison to other sharding mechanisms, where there are a fixed number of shards with distinct blocks and distinct block proposers, in Danksharding there is only one proposer that chooses all transactions and all data that go into that slot.
 
-## Deterministic
+## Determinism
 
 The concept of some function or process having a single outcome that is knowable by all participants. In the context of a rollup, it generally refers to the new state being calculable given a prior state and a list of transactions to be executed.
 
@@ -80,7 +80,7 @@ A perfect degree of [compatibility](#compatibility); where one system or concept
 
 The facility for any user of a rollup to exit the system with their assets under any circumstance. Most relevant in rollups with a centralized [proposer](#proposer), wherein users do not have the ability to propose blocks, but can nonetheless exit the rollup by interacting with a smart contract on L1.
 
-## Fast Fourier transform (FFT)
+## Fast Fourier Transform (FFT)
 
 An algorithm that computes the Discrete Fourier Transform (DFT) of a sequence in a more efficient manner; that is, taking O(n*log(n)) instead of O(n*n). It is used for extremely fast multiplication of large numbers, multiplication of polynomials, and extremely fast generation and recovery of erasure codes.
 
@@ -141,6 +141,10 @@ Layer 1 (L1) is a blockchain that is self-reliant on its validator set for its s
 
 Lookup tables express a relation between variables in the format of a table. A prover can rely on such a table of precomputed values in generating a proof without having to do bit by bit arithmetic. These tables can help handle hash functions within circuits in a more friendly manner (that is speeding up decryption and reducing memory requirements).
 
+## Maximal Extractable Value (MEV)
+
+The maximum profit that can be extracted from block production by including, excluding, and reodering transactions in a block. In rollups, [proposers (sequencers)](#proposer) and [prover](#prover) are the network participants that receive rewards for building and proving blocks.
+
 ## Merkle proofs
 
 Hashing the pairs of values at each layer (hashing hashes starting from layer 2) and climbing up the (Merkle) Tree until you obtain the root hash. Merkle proofs help check if the data belongs to a set without having to store the set.
@@ -168,6 +172,10 @@ A constellation of nodes (peers) that communicate via a peer-to-peer protocol, f
 ## Node
 
 A software client that participates in the network.
+
+## Opcode
+
+A binary instruction code that defines a specific operation or computational task that the EVM or other VMs can perform. In the context of rollups, opcode- and bytecode-level [compatibility](#compatibility) refers to the ability to execute smart contracts with or without modification.
 
 ## Operator
 
@@ -260,9 +268,9 @@ There are two types of trusted setup: (i) trusted setup per circuit where it is 
 
 The ability of a network to mediate transactions without any of the involved parties needing to trust a third party.
 
-## Turing complete
+## Turing completeness
 
-A system of data-manipulation rules (such as a computer's instruction set, a programming language, or a cellular automaton) is said to be "Turing complete" or "computationally universal" if it is able to recognize or decide other data-manipulation rule sets.
+A system of data-manipulation rules (such as a computer's instruction set, a programming language, or a cellular automaton) is said to be "Turing-complete" or "computationally universal" if it is able to recognize or decide other data-manipulation rule sets.
 
 ## Validator
 

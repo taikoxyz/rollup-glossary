@@ -6,6 +6,10 @@ A [rollup](#rollup) that supports only a certain type of application or function
 
 The computation model of ZK-[SNARKs](#SNARK).
 
+## Blind signature
+
+A type of digital signature where the signer signs a message without knowing its content, allowing the signer to remain anonymous.
+
 ## Blobs
 
 The data that a [rollup](#rollup) publishes to its [L1](#layer-1)/[data availability (DA)](#data-availability) layer. They consist of the [L2](#layer-2) [transactions](#transaction) that are rolled up, along with some metadata. Blobs are introduced as a new transaction type within Ethereum with [EIP-4844](#Proto-danksharding-(EIP-4844)), and has rollup scaling specifically in mind. Blobs persist on Ethereum’s Beacon Chain ephemerally.
@@ -21,6 +25,10 @@ An ordered list of transactions and chain-related metadata that gets bundled tog
 ## Bridge
 
 A message-passing protocol between two blockchains (between [L1](#layer-1) and [L2](#layer-2), and between L2s). At its most basic, a bridge consists of a [smart contract](#smart-contract) which can escrow funds on one side of the bridge, and instruct the release or minting of corresponding assets on the other side. How these instructions are validated is a critical factor in assessing the trust assumptions of a bridge.
+
+## Bulletproofs
+
+A type of zero-knowledge proof that enables efficient range proofs and other mathematical proofs without requiring trusted setup.
 
 ## Bytecode
 
@@ -84,6 +92,10 @@ The facility for any user of a rollup to exit the system with their assets under
 
 An algorithm that computes the Discrete Fourier Transform (DFT) of a sequence in a more efficient manner; that is, taking O(n*log(n)) instead of O(n*n). It is used for extremely fast multiplication of large numbers, multiplication of polynomials, and extremely fast generation and recovery of erasure codes.
 
+## Fiat-Shamir heuristic
+
+A method of converting interactive proofs into non-interactive proofs, commonly used in zero-knowledge protocols.
+
 ## Fraud proof
 
 Also referred to as a fault proof, it is the construction of an assertion that fraud was perpetrated on an [optimistic rollup](#optimisitc-rollup). More concretely, that an invalid state transition took place according to the protocol rules. The submitter of a fraud proof would expect a reward from the optimistic rollup protocol for helping maintain the integrity of the system.
@@ -119,6 +131,10 @@ The first recursive proof composition without a trusted setup. A proof verifies 
 ## Hash
 
 A fixed-length fingerprint of variable-size input, produced by a hash function.
+
+## Homomorphic encryption
+
+A type of encryption that allows computations to be performed on encrypted data without decrypting it, making it useful for privacy-preserving computation.
 
 ## KZG commitments
 
@@ -169,6 +185,10 @@ A constellation of nodes (peers) that communicate via a peer-to-peer protocol, f
 
 A software client that participates in the network.
 
+## One-time pad
+
+A type of encryption that uses a random key that is only used once to encrypt a message, providing perfect secrecy.
+
 ## Operator
 
 An operator is the entity charged with managing a rollup and progressing its state. While similar to the concept of a proposer, operator is often meant to convey a centralized rollup implementation, with a single operator acting as node, proposer (and prover if ZK).
@@ -203,6 +223,10 @@ A proposal to implement most of the logic and architecture that make up a full D
 An entity that generates the cryptographic proof to convince the verifier that the statement is true (without revealing its inputs). In a ZK-Rollup, the prover generates the ZK (validity) proof to submit to the verifier contract.
 If used in the context of an optimistic rollup, the prover generates the fraud proof to show that an incorrect state was submitted.
 
+## Random oracle
+
+A theoretical cryptographic primitive that is used to model the behavior of hash functions in security proofs.
+
 ## Rewards
 
 In the context of a rollup, an amount of some token allotted as a reward to the participant—proposer and/or prover—who performed a service for the network.
@@ -219,6 +243,10 @@ A bundle of smart contracts running on Ethereum that controls a rollup protocol.
 
 A protocol that a program uses to request a service from a program located on another computer in a network without having to understand the network details.
 
+## Secure multiparty computation
+
+A type of computation where multiple parties jointly compute a function without revealing their inputs to each other, allowing for privacy-preserving computation.
+
 ## Sequencer
 
 A party responsible for ordering and executing transactions on the rollup. The sequencer verifies transactions, compresses the data into a block, and submits the batch to Ethereum L1 as a single transaction. Often synonymous with [proposer](#proposer).
@@ -226,6 +254,10 @@ A party responsible for ordering and executing transactions on the rollup. The s
 ## Settlement
 
 The mechanism with which the execution of rollup blocks and the resultant state is verified and possible disputes are resolved. In the context of rollups or other modular blockchains, it often refers to the proof system used--validity (ZK) or fraud proofs, or a combination thereof. Sometimes it will refer to this mechanism along with where the mechanism's outputs are ultimately published and verified, as in Ethereum being a settlement layer by verifying the proof(s).
+
+## Schnorr signature
+
+A type of digital signature that is more efficient than traditional digital signatures and can be used in conjunction with threshold signatures to enable multisignature schemes.
 
 ## Smart contract
 
@@ -250,6 +282,10 @@ In regards to upgradeability, a predefined amount of time that must elapse befor
 ## Transaction
 
 Data committed to the Ethereum Blockchain signed by an originating account, targeting a specific address. The transaction contains metadata such as the gas limit for that transaction.
+
+## Threshold cryptography
+
+A type of cryptography where multiple parties jointly hold a secret key and must cooperate to perform cryptographic operations, enabling more secure and decentralized system.
 
 ## Trusted setup (ceremony)
 

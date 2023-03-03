@@ -5,45 +5,45 @@ A [ZK-Rollup](/other-terms#zk-rollup) that can interpret and execute [EVM](/othe
 
 ## Data availability
 
-The property of a rollup’s state being reachable by any node retrieving the inputs that were rolled up and executed to reach said state. Data availability (DA), specifically decoupling it from the rollup nodes themselves, is one of the preeminent factors which allows a rollup to scale securely. A rollup is faced with a decision of what to use as a DA layer to guarantee that any node can retrieve this data--permissionlessly under any circumstance. For this reason, using Ethereum for DA currently provides the strongest security guarantees. If data is stored somewhere other than a permissionless L1, then the L2 is not a rollup, but some other type of L2.
+The property of a [rollup](#rollup)’s state being reachable by any [node](/other-terms#node) retrieving the inputs that were rolled up and executed to reach said state. Data availability (DA), specifically decoupling it from the rollup nodes themselves, is one of the preeminent factors which allows a rollup to [scale](#Scalability) securely. A rollup is faced with a decision of what to use as a DA layer to guarantee that any node can retrieve this data--permissionlessly under any circumstance. For this reason, using Ethereum for DA currently provides the strongest security guarantees. If data is stored somewhere other than a permissionless [L1](/other-terms#Layer-1), then the [L2](#Layer-2) is not a rollup, but some other type of L2.
 
 ## Decentralized rollup
 
-There are several factors within a [rollup](/other-terms#rollup) construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a node, who can [propose](#proposer) blocks, who can [prove](#prover) blocks (in ZK-Rollups), and who can [upgrade](#Upgradeability) the rollup smart contracts. For the factors of "who can run a node/proposer/prover", the question asks both: is it [permissionless](#permissionless) for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.
+There are several factors within a [rollup](#rollup) construction which separately can be more or less decentralized, leading to the degree to which the rollup as a whole is uncapturable by a central entity. The most significant factors include who can run a [node](/other-terms#node), who can [propose](#proposer) [blocks](/other-terms#block), who can [prove](#prover) blocks (in [ZK-Rollups](/other-terms#ZK-Rollup)), and who can [upgrade](#Upgradeability) the rollup [smart contracts](/other-terms#Smart-contract). For the factors of "who can run a node/proposer/prover", the question asks both: is it [permissionless](#permissionless) for anyone to run these (no allow-list); and how reasonable is it in terms of hardware required.
 
 ## Ethereum-equivalent ZK-EVM
 
-A ZK-Rollup that can prove the correctness of an actual Ethereum L1 block in its ZK-EVM circuit. No changes made to any part of Ethereum--EVM but also peripheral things like storage structures and hash functions. (Type 1 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/other-terms#ZK-Rollup) that can [prove](/other-terms#Prover) the correctness of an actual Ethereum [L1](/other-terms#Layer-1) [block](/other-terms#Block) in its [ZK-EVM](#ZK-EVM) [circuit](/other-terms#circuit). No changes made to any part of Ethereum--EVM but also peripheral things like storage structures and hash functions. (Type 1 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## EVM-equivalent ZK-EVM
 
-A ZK-Rollup that can interpret and execute EVM bytecode. All EVM opcodes and pre-compiles are supported and provable through the ZK-EVM circuit. (Type 2 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/other-terms#ZK-Rollup) that can interpret and execute [EVM](/other-terms#Ethereum-Virtual-Machine-(EVM)) [bytecode](/other-terms#Bytecode). All EVM opcodes and [pre-compiles](/other-terms#Pre-compiles) are supported and provable through the [ZK-EVM])(#ZK-EVM) [circuit](/other-terms#circuit). (Type 2 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## Bytecode-compatible (EVM-compatible) ZK-EVM
 
-A ZK-Rollup that can interpret and execute Ethereum bytecode, with some changes made to certain components of the EVM, such as different gas costs, or some unsupported features. (Type 2.5 and 3 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/other-terms#ZK-Rollup) that can interpret and execute Ethereum [bytecode](/other-terms#Bytecode), with some changes made to certain components of the [EVM](/other-terms#Ethereum-Virtual-Machine-(EVM)), such as different gas costs, or some unsupported features. (Type 2.5 and 3 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## Finality
 
 > Needs help: some people distinguish order vs execution finality.
 
-Finality is a scale--when a valid L2 transaction is included in an L1 block, it has the same finality as that enclosing block. This is different from correctness, because incorrect state transitions can still have a concept of finality in an enclosing L1 block but be later proven as invalid.
+Finality is a scale--when a valid [L2](#Layer-2) [transaction](/other-terms#Transaction) is included in an [L1](/other-terms#Layer-1) [block](/other-terms#Block), it has the same finality as that enclosing block. This is different from correctness, because incorrect state transitions can still have a concept of finality in an enclosing L1 block but be later proven as invalid.
 
 ## Language-compatible ZK-EVM
 
-A ZK-Rollup that can interpret and execute Solidity or other high-level-language source code. This code is compiled into bytecode that differs from that which the EVM runs. (Type 4 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
+A [ZK-Rollup](/other-terms#ZK-Rollup) that can interpret and execute Solidity or other high-level-language source code. This code is compiled into [bytecode](/other-terms#Bytecode) that differs from that which the [EVM](/other-terms#Ethereum-Virtual-Machine-(EVM)) runs. (Type 4 in [Vitalik's classification](https://vitalik.ca/general/2022/08/04/zkevm.html)).
 
 ## Layer 2
 
-Layer 2 (L2) is a category of technical solutions which build upon an [L1](/other-terms#layer-1) with the aim of improving [scalability](#scalability), privacy, or other properties. L2s make use of L1 to bootstrap security and [settlement](/other-terms#settlement) guarantees. The L2 and L1 de-composition represents an example of a modular blockchain framework.
+Layer 2 (L2) is a category of technical solutions which build upon an [L1](/other-terms#layer-1) with the aim of improving [scalability](#scalability), privacy, or other properties. L2s make use of L1 to bootstrap security and [settlement](/other-terms#settlement) guarantees. The L2 and L1 de-composition represents an example of a [modular blockchain](/other-terms#Modular-blockchains) framework.
 
 ## Permissionless
 
-Anyone willing should be able to join and leave the network at any time, without causing significant disturbance to the network or being detrimental to the party in question. No single entity should have the power to allowlist or blocklist participants.
+Anyone willing should be able to join and leave the [network](/other-terms#Network) at any time, without causing significant disturbance to the network or being detrimental to the party in question. No single entity should have the power to allowlist or blocklist participants.
 
 ## Rollup
 
-A type of [layer 2](#layer-2) scaling solution that batches multiple transactions and submits them to a separate chain (like an L1) in a single transaction. The validity of the batch is proven either up front with a [validity proof](/other-terms#validity-proof) (ZK-Rollup), or after some challenge period has elapsed without a [fraud proof](/other-terms#fraud-proof) being submitted (Optimistic Rollup). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/DA chain to which they posted the transaction data.
+A type of [layer 2](#layer-2) [scaling](#Scalability) solution that batches multiple [transactions](/other-terms#Transaction) and submits them to a separate chain (like an [L1](/other-terms#Layer-1)) in a single transaction. The validity of the batch is proven either up front with a [validity proof](/other-terms#validity-proof) (ZK-Rollup), or after some [challenge period](/other-terms#Challenge-period) has elapsed without a [fraud proof](/other-terms#fraud-proof) being submitted ([Optimistic Rollup](/other-terms#Optimistic-Rollup)). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/[DA](#Data-availability) chain to which they posted the transaction data.
 
 ## Scalability
 
@@ -51,7 +51,7 @@ The ability of a blockchain to handle a high level of throughput as measured in 
 
 ## Trustless
 
-The ability of a network to mediate transactions without any of the involved parties needing to trust a third party. A further definition may be: given a starting set of trust assumptions or point of understanding, the inability for this understanding to be unilaterally changed by any one party.
+The ability of a [network](/other-terms#Network) to mediate [transactions](/other-terms#Transaction) without any of the involved parties needing to trust a third party. A further definition may be: given a starting set of trust assumptions or point of understanding, the inability for this understanding to be unilaterally changed by any one party.
 
 ## Upgradeability
 
@@ -60,5 +60,5 @@ The ability for [rollup smart contracts](/other-terms#rollup-contracts) and para
 ## ZK-EVM
 
 A ZK-EVM is understood as either:
-- A set of circuits that prove the execution of the Ethereum Virtual Machine (EVM). It is the core component of a ZK-Rollup that generates validity proofs to verify the correctness of programs.
-- The ZK-Rollup as a whole which offers EVM-compatible execution, and proves that execution with circuits that generate validity proofs.
+- A set of [circuits](/other-terms#circuit) that prove the execution of the [Ethereum Virtual Machine (EVM)](/other-terms#Ethereum-Virtual-Machine-(EVM)). It is the core component of a [ZK-Rollup](/other-terms#ZK-Rollup) that generates [validity proofs](/other-terms#Validity-proof) to verify the correctness of programs.
+- The [ZK-Rollup](/other-terms#ZK-Rollup) as a whole which offers [EVM-compatible](#Bytecode-compatible-(EVM-compatible)-ZK-EVM) execution, and proves that execution with [circuits](/other-terms#circuit) that generate [validity proofs](/other-terms#Validity-proof).

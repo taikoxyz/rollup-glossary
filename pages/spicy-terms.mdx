@@ -43,7 +43,7 @@ Anyone willing should be able to join and leave the [network](/other-terms#Netwo
 
 ## Rollup
 
-A type of [layer 2](#layer-2) [scaling](#Scalability) solution that batches multiple [transactions](/other-terms#Transaction) and submits them to a separate chain (like an [L1](/other-terms#Layer-1)) in a single transaction. The validity of the batch is proven either up front with a [validity proof](/other-terms#validity-proof) (ZK-Rollup), or after some [challenge period](/other-terms#Challenge-period) has elapsed without a [fraud proof](/other-terms#fraud-proof) being submitted ([Optimistic Rollup](/other-terms#Optimistic-Rollup)). Rollups allow for reductions in gas costs and increases in transaction throughput while inheriting security guarantees from the L1/[DA](#Data-availability) chain to which they posted the transaction data.
+A rollup is a chain, specifically a chain which is derived from a base chain's state (the base chain in this context can be referred to as a data availability layer). A rollup does not need a proving system, because it is defined by the state of the base chain and how it is derived. A proving system does not define a rollup, but it's a mechanism for one chain to develop some confidence to trust the data from some other chain. A rollup is another chain, and multiple rollups means higher bandwidth, similar to lanes of traffic on the highway, which offers cheaper fees. Also, it might omit taking part in consensus, which reduces costs as well (and relying on the consensus of the base chain).
 
 ## Scalability
 
